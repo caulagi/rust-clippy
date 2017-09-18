@@ -3,6 +3,14 @@ extern crate compiletest_rs as compiletest;
 use std::path::PathBuf;
 use std::env::{set_var, var};
 
+fn clippy_driver_path() -> PathBuf {
+    if let Some(path) = option_env!("CLIPPY_DRIVER_PATH") {
+        PathBuf::from(path)
+    } else {
+        PathBuf::from(concat!("target/", env!("PROFILE"), "/clippy-driver"))
+    }
+}
+
 fn run_mode(dir: &'static str, mode: &'static str) {
     let mut config = compiletest::Config::default();
 
@@ -16,6 +24,7 @@ fn run_mode(dir: &'static str, mode: &'static str) {
     config.mode = cfg_mode;
     config.build_base = PathBuf::from("target/debug/test_build_base");
     config.src_base = PathBuf::from(format!("tests/{}", dir));
+    config.rustc_path = clippy_path();
 
     compiletest::run_tests(&config);
 }

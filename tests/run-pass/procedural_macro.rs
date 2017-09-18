@@ -1,4 +1,4 @@
-#![feature(plugin)]
+
 #![plugin(clippy, clippy_mini_macro_test)]
 
 #[deny(warnings)]
