@@ -29,6 +29,11 @@ name = "cargo-clippy"
 test = false
 path = "src/main.rs"
 
+[[bin]]
+name = "clippy-driver"
+test = false
+path = "src/driver.rs"
+
 [dependencies]
 # begin automatic update
 clippy_lints = { version = "0.0.162", path = "clippy_lints" }
