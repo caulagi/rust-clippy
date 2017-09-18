@@ -60,5 +60,3 @@ help: change the `.clone` to
 56 |     x.to_string()
    |     ^^^^^^^^^^^^^
 
-error: aborting due to 5 previous errors
-

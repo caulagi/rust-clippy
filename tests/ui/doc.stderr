@@ -156,5 +156,3 @@ error: you should put `be_sure_we_got_to_the_end_of_it` between ticks in the doc
 138 | /// be_sure_we_got_to_the_end_of_it
     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-error: aborting due to 26 previous errors
-

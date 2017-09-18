@@ -175,7 +175,7 @@ pub fn main() {
         // this check ensures that dependencies are built but not linted and the final
         // crate is
         // linted but not built
-        let clippy_enabled = env::args().any(|s| s == "--emit=metadata");
+        let clippy_enabled = env::var("CLIPPY_TESTS").is_ok() || env::args().any(|s| s == "--emit=metadata");
 
         if clippy_enabled {
             args.extend_from_slice(&["--cfg".to_owned(), r#"feature="cargo-clippy""#.to_owned()]);
